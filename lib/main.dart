@@ -1,46 +1,28 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Rolling Dice',
-      theme: ThemeData(useMaterial3: true),
+  runApp(
+    MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
         body: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(12),
-          // ignore: prefer_const_constructors
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Text(
-                'Flutter - The Complete Guide Course',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.deepOrange, Colors.deepPurple],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: const Center(
+            child: Text(
+              'This is text.',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
               ),
-              SizedBox(height: 16),
-              Text(
-                'Learn Flutter step-by-step, from the ground up.',
-                textAlign: TextAlign.center,
-              ),
-            ],
+            ),
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
